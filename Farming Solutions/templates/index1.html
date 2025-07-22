@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('data:image/jpeg;base64,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') center / cover repeat;
+        }
+        .button-container,.button-container1 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .button {
+            width: 500px;
+            height: 300px;
+            padding: 20px;
+            font-size: 40px;
+            text-align: center;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: background-color 0.3s, transform 0.3s;
+            background-size: cover;
+            background-repeat: no-repeat;
+         text-shadow: 4px 4px 4px black;
+        }
+        .button:hover {
+            background-color: yellow;
+            transform: scale(1.05);
+        }
+        .space{
+         width: 20px;
+         }
+        .croprecommendation {
+            background-image: url('https://th.bing.com/th?id=OIP.UA_E4DsT740kgtZGyWCWagAAAA&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+        }
+        .weatherforecasting {
+            background-image: url('https://th.bing.com/th/id/OIP.XA7qWVyr6HHL3fPMQPMenwHaE5?w=237&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');
+        }
+        .fertilizer {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHRRgKV66uYfymKlnzmvVbpLS9haxbbp5mrQ&s');
+        }
+        .croppriceprediction {
+            background-image: url('https://th.bing.com/th/id/OIP.QkxKnS7kskNm9wNwypEncwHaF7?w=240&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7');
+            background-size:500px 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button croprecommendation" onclick="window.location.href='/crop'">Crop Recommendation</button>
+        <button class="button croppriceprediction" onclick="window.location.href='/cropprice'">Crop Price Prediction</button>
+    </div>
+     <div class="space"></div>
+     <div class="button-container1">
+        <button class="button weatherforecasting" onclick="window.location.href='/weather'">Weather Forecasting</button>
+        <button class="button fertilizer" onclick="window.location.href='/fertili'">Fertilizer Recommendation</button>
+    </div>
+</body>
+</html>

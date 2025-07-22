@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        body {
+            background-image: url('https://th.bing.com/th/id/R.e415043f5af4dc023755e6ca401ea2fe?rik=rWzISXpAA3I6gA&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f0%2f8%2fa%2f265630.jpg&ehk=a3nyh%2bzNro3tGEqhinRpyvNvypKU5vF%2bsF8TCRDZ1iY%3d&risl=&pid=ImgRaw&r=0');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        *, h1, h2, h3, h4, h5, h6, p, ul, li, label, input, button {
+            color: Black;
+        }
+.source {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <h1>Weather Forecast</h1>
+
+    <form method="POST">
+        <label for="city">Enter Location:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    <h2>Current Weather in {{ city1 }}</h2>
+    <b>
+        <p>Temperature: {{ temperature1 }}°C</p>
+        <p>Condition: {{ condition1 }}</p>
+        <p>Description: {{ desc1 }}</p>
+        <p>Wind Speed: {{ wind1 }} m/s</p>
+        <p>Pressure: {{ pressure1 }} hPa</p>
+        <p>Humidity: {{ humidity1 }}%</p>
+    </b>
+
+    <h2>Forecast for the Next 5 Days</h2>
+    <ul>
+        {% for forecast in forecast_data %}
+            <li>
+                <strong>{{ forecast.date }}</strong>: 
+                {{ forecast.temperature }}°C, 
+                {{ forecast.condition }},
+                {{ forecast.desc }}
+            </li>
+        {% endfor %}
+    </ul> <div class="source"><h6>source:openweathermap.org<h6></div>
+</body>
+</html>
